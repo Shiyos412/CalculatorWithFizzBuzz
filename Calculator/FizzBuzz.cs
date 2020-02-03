@@ -7,18 +7,18 @@ namespace Calculator
     public class FizzBuzz
     {
         //TODO - Comments
-        //private List<double> checks;
-        //public List<double> nums;
+        //private List<long> checks;
+        //public List<long> nums;
         public FizzBuzz()
         {
             
         }
 
-        public static List<string> IsFizzBuzz(List<double?> checks, List<double?> nums)
+        public static List<string> IsFizzBuzz(List<long?> checks, List<long?> nums)
         {
             List<string> end = new List<string>();
 
-            foreach (double? a in nums)
+            foreach (long? a in nums)
             {
                 string result = "";
 

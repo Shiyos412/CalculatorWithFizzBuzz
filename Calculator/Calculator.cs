@@ -5,7 +5,7 @@ namespace Calculator
     {
 
         //Basic Addition/Summation - Array
-        public static double Sum(params double[] arr)
+        public static long Sum(params long[] arr)
         {
             int sum = 0;
             foreach (int a in arr)
@@ -16,7 +16,7 @@ namespace Calculator
         }
 
         //Product of inputs - Array
-        public static double Product(params double[] arr)
+        public static long Product(params long[] arr)
         {
             int product = 1;
             foreach (int a in arr)
@@ -28,17 +28,17 @@ namespace Calculator
 
 
         //Subtraction - 2 numbers
-        public static double Sub(double a, double b)
+        public static long Sub(long a, long b)
         {
             return a - b;
         }
 
 
         //Division - 2 numbers
-        public static string Division(double a, double b)
+        public static string Division(long a, long b)
         {
-            double c = a / b;
-            double r = a % b;
+            long c = a / b;
+            long r = a % b;
             if(r == 0)
             {
                 return $"{c}";
