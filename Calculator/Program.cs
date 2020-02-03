@@ -59,12 +59,44 @@ namespace Calculator
                     {
                         Console.Write(a + " ");
                     }
-                    Console.WriteLine();
+                    Console.WriteLine("\n\n\n\n\n\n");
 
                 }
                 else if (input == "2")
                 {
-                    Console.WriteLine("goodbye\n");
+                    Console.WriteLine("What function?");
+                    Console.WriteLine("1.Add\n2.Subtract\n3.Multiply\n4.Divide");
+                    string s = Console.ReadLine();
+                    switch (s)
+                    {
+                        case ("1"):
+                            Console.WriteLine("What numbers do you want to add?");
+                            string temp = Console.ReadLine();
+                            string[] nums = temp.Split(' ');
+                            List<double> convertNums = new List<double>();
+                            foreach(string a in nums)
+                            {
+                                if(Double.TryParse(a, out double b) == true)
+                                {
+                                    convertNums.Add(Double.Parse(a));
+                                }
+                                else
+                                {
+                                    Console.WriteLine($"{a} is invalid input");
+                                }
+                            }
+                            double result = Calculator.Sum(convertNums.ToArray());
+                            Console.WriteLine($"The sum of your numbers is: {result}\n");
+                            break;
+                        case ("2"):
+                            break;
+                        case ("3"):
+                            break;
+                        case ("4"):
+                            break;
+                        default:
+                            break;
+                    }
                 }
                 else
                 {
