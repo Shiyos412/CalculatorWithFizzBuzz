@@ -27,7 +27,7 @@ namespace Calculator
                     throw new ArgumentOutOfRangeException();
                 }
 
-                if(a % checks[0] == 0)
+                if (a % checks[0] == 0)
                 {
                     result += "Fizz";
                 }
