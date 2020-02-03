@@ -3,12 +3,9 @@ namespace Calculator
 {
     public class Calculator
     {
-        public Calculator()
-        {
-        }
 
         //Basic Addition/Summation - Array
-        public static int Sum(params int[] arr)
+        public static double Sum(params double[] arr)
         {
             int sum = 0;
             foreach (int a in arr)
@@ -19,7 +16,7 @@ namespace Calculator
         }
 
         //Product of inputs - Array
-        public static int Product(params int[] arr)
+        public static double Product(params double[] arr)
         {
             int product = 1;
             foreach (int a in arr)
@@ -31,14 +28,14 @@ namespace Calculator
 
 
         //Subtraction - 2 numbers
-        public double Sub(double a, double b)
+        public static double Sub(double a, double b)
         {
             return a - b;
         }
 
 
         //Division - 2 numbers
-        public string Division(double a, double b)
+        public static string Division(double a, double b)
         {
             double c = a / b;
             double r = a % b;
