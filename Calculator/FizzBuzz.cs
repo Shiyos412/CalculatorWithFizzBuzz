@@ -23,10 +23,7 @@ namespace Calculator
         //TODO - Comments
         //private List<long> checks; -- unecessary storage of checks and nums from main, did not end up needing
         //public List<long> nums;
-        public FizzBuzz()
-        {
-            
-        }
+        
 
         public static List<string> IsFizzBuzz(List<long?> checks, List<long?> nums)
         {

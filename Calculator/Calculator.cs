@@ -1,6 +1,7 @@
 ﻿using System;
 
 
+
 /*
  * Calculator class with 4 basic functionality as of 2/3/20
  * TODO:
@@ -21,7 +22,7 @@ namespace Calculator
     //Left as non static for potential reasons in the future(?) may change
     public class Calculator
     {
-
+        private static double pie = Math.PI;
         //Basic Addition/Summation - Array
         public static long Sum(params long[] arr)
         {
@@ -64,10 +65,38 @@ namespace Calculator
             return $"{c} Remainder of {r}";
         }
 
-        //SQRT
-        //POW
-        //Area of circle?
-        //Area of polygon with n sides?
+        //TODO: SQRT
+        public static double SquareRT(double a)
+        {
+            return Math.Sqrt(a);
+        }
+
+ 
+        //TODO: POW
+        public static double Exponential(double a, int exponent)
+        {
+            int count = 1;
+            double result = 1;
+            while(count <= exponent)
+            {
+                result *= a;
+                count++;
+            }
+            return result;
+        }
+
+
+        //TODO: Area of circle?
+        public static double CircleArea(double rad)
+        {
+            if(rad < 0)
+            {
+                return 0;
+            }
+            return Calculator.pie * Exponential(rad, 2);
+        }
+        //Area of regular polygon with n sides?
+        //^ this would utilize trigonometry, might be trickier to implement
 
         
     }

@@ -8,7 +8,7 @@ using System.Linq;
 *   Michael Cerase 02/03/2020
 *   Basic Calculator app with FizzBuzz functionality
 *   App has a basic main menu that branches off into functionality of both classes Calculator and FizzBuzz
-*   TODO in main: Comment out
+*   TODO in main: 
 *   Notes(2/3/20):
 *   1.Throughout the calculator switch cases, I reused variable names and iterated them by 1, this may be more difficult to read then utilizing
 *   unique names, however for now that was the simplest way to handle the usage of multiple variables in such short space
@@ -21,6 +21,7 @@ namespace Calculator
 {
     class Program
     {
+        
         static void Main(string[] args)
         {
             while (true)
@@ -34,7 +35,7 @@ namespace Calculator
                     Console.WriteLine("Goodbye");
                     break;
                 }
-
+                
                 //FIZZBUZZ Functionality
                 else if (input == "1")
                 {
