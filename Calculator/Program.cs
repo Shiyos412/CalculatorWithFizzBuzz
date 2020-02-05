@@ -21,7 +21,6 @@ namespace Calculator
 {
     class Program
     {
-        
         static void Main(string[] args)
         {
             while (true)
@@ -190,7 +189,8 @@ namespace Calculator
                                 }
                                 else
                                 {
-                                    Console.WriteLine($"{a} is invalid input");
+                                    Console.WriteLine($"{a} is invalid input, adding 1");
+                                    convertNums4.Add(1);
                                 }
                             }
                             Console.WriteLine($"The quotient is " + Calculator.Division(convertNums4[0], convertNums4[1]));
@@ -209,7 +209,7 @@ namespace Calculator
                 }
                 else
                 {
-                    Console.WriteLine("Invalid Input\n");
+                    Console.WriteLine("Invalid Input, try again \n");
                 }
             }
         }
