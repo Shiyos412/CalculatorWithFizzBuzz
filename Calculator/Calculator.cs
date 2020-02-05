@@ -16,7 +16,7 @@
  * however, this would require changing the string arrays to char arrays but numbers w/ more then one digit would become difficult to parse
  * Need to look further into possible decimal implementation (decimal.parse does not catch decimals, it rounds all numbers down automatically)
  */
-namespace Calculator
+namespace Calculations
 {
     //Left class as non static however it could be static and there would be no realistic difference, its similar to the Math class in system
     //Left as non static for potential reasons in the future(?) may change

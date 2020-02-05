@@ -15,7 +15,7 @@ using System.Linq;
  * something similar to calculator where it offers a menu list to enter a number to choose what they want to do.
  * 
  */
-namespace Calculator
+namespace Calculations
 {
     //Left the class as non static for potential future implementation that could require instantiation? May change later
     public class FizzBuzz

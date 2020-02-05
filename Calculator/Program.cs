@@ -4,24 +4,26 @@ using System.Linq;
 
 
 
+
+
 /*
 *   Michael Cerase 02/03/2020
 *   Basic Calculator app with FizzBuzz functionality
 *   App has a basic main menu that branches off into functionality of both classes Calculator and FizzBuzz
 *   TODO in main: 
 *   Notes(2/3/20):
-*   1.Throughout the calculator switch cases, I reused variable names and iterated them by 1, this may be more difficult to read then utilizing
+*   1.Throughout the Calculator switch cases, I reused variable names and iterated them by 1, this may be more difficult to read then utilizing
 *   unique names, however for now that was the simplest way to handle the usage of multiple variables in such short space
 *   2.The text goes very fast in the console, not sure if there is a way to delay?
 *   3.Calculator will let you return to menu easily, FizzBuzz is less consistent, should find a way to more consistently offer a way to return
 *   to menu
 *   4. Both of the classes could easily be static, still deciding if I want to change that, will be in a future commit.
 */
-namespace Calculator
+namespace Calculations
 {
     class Program
     {
-        static void Main(string[] args)
+        public static void Main(string[] args)
         {
             while (true)
             {
@@ -126,11 +128,14 @@ namespace Calculator
                                 }
                                 else
                                 {
-                                    Console.WriteLine($"{a} is invalid input");
+                                    Console.WriteLine($"{a} is invalid input, adding 0");
+                                    convertNums.Add(0);
                                 }
                             }
                             long result = Calculator.Sum(convertNums.ToArray());
                             Console.WriteLine($"The sum of your numbers is: {result}\n");
+                            System.Threading.Thread.Sleep(5000);
+                            Console.Clear();
                             break;
 
                         //Subtract
@@ -147,11 +152,14 @@ namespace Calculator
                                 }
                                 else
                                 {
-                                    Console.WriteLine($"{a} is invalid input");
+                                    Console.WriteLine($"{a} is invalid input, adding 0");
+                                    convertNums2.Add(0);
                                 }
                             }
                             long result2 = Calculator.Sub(convertNums2[0], convertNums2[1]);
                             Console.WriteLine($"The difference of your numbers is: {result2}\n");
+                            System.Threading.Thread.Sleep(5000);
+                            Console.Clear();
                             break;
 
                         //Multiply
@@ -168,11 +176,14 @@ namespace Calculator
                                 }
                                 else
                                 {
-                                    Console.WriteLine($"{a} is invalid input");
+                                    Console.WriteLine($"{a} is invalid input, adding 1");
+                                    convertNums3.Add(1);
                                 }
                             }
                             long result3 = Calculator.Product(convertNums3.ToArray());
                             Console.WriteLine($"The product of your numbers is: {result3}\n");
+                            System.Threading.Thread.Sleep(5000);
+                            Console.Clear();
                             break;
 
                         //Divide with Remainder
@@ -181,35 +192,43 @@ namespace Calculator
                             string temp4 = Console.ReadLine();
                             string[] nums4 = temp4.Split(' ');
                             List<long> convertNums4 = new List<long>();
-                            foreach (string a in nums4)
-                            {
-                                if (long.TryParse(a, out long b) == true)
+                                foreach (string a in nums4)
                                 {
-                                    convertNums4.Add(long.Parse(a));
+                                    if (long.TryParse(a, out long b) == true)
+                                    {
+                                        convertNums4.Add(long.Parse(a));
+                                    }
+                                    else
+                                    {
+                                        Console.WriteLine($"{a} is invalid input, adding 1");
+                                        convertNums4.Add(1);
+                                    }
                                 }
-                                else
-                                {
-                                    Console.WriteLine($"{a} is invalid input, adding 1");
-                                    convertNums4.Add(1);
-                                }
-                            }
                             Console.WriteLine($"The quotient is " + Calculator.Division(convertNums4[0], convertNums4[1]));
+                            System.Threading.Thread.Sleep(5000);
+                            Console.Clear();
                             break;
 
                         //Return to menu
                         case ("5"):
                             Console.WriteLine("Returning to main menu");
+                            System.Threading.Thread.Sleep(1000);
+                            Console.Clear();
                             break;
 
                         //Invalid input returns them to menu as well
                         default:
                             Console.WriteLine("Invalid input, returning to menu");
+                            System.Threading.Thread.Sleep(1000);
+                            Console.Clear();
                             break;
                     }
                 }
                 else
                 {
                     Console.WriteLine("Invalid Input, try again \n");
+                    System.Threading.Thread.Sleep(1000);
+                    Console.Clear();
                 }
             }
         }
