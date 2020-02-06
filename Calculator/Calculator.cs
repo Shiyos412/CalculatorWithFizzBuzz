@@ -22,6 +22,7 @@ namespace Calculations
     //Left as non static for potential reasons in the future(?) may change
     public class Calculator
     {
+        
         private static double pie = Math.PI;
         //Basic Addition/Summation - Array
         public static long Sum(params long[] arr)
@@ -96,6 +97,7 @@ namespace Calculations
             return Calculator.pie * Exponential(rad, 2);
         }
         //Area of regular polygon with n sides?
+        
         //^ this would utilize trigonometry, might be trickier to implement
 
         
