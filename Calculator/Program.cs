@@ -28,7 +28,7 @@ namespace Calculations
             while (true)
             {
                 Console.WriteLine("What do you want to do?");
-                Console.WriteLine("1. FizzBuzz\n2. Four Function Calculator\n3. Quit");
+                Console.WriteLine("1. FizzBuzz\n2. Calculator\n3. Quit");
                 Console.WriteLine("Type a number\n");
                 string input = Console.ReadLine();
                 if (input.ToLower() == "3")
@@ -109,7 +109,7 @@ namespace Calculations
                     *The same (for the most part) syntax is used for all four functions
                     */
                     Console.WriteLine("What function?");
-                    Console.WriteLine("1.Add\n2.Subtract\n3.Multiply\n4.Divide\n5.Return");
+                    Console.WriteLine("1.Add\n2.Subtract\n3.Multiply\n4.Divide\n5.Square Root\n6.Exponential\n7.Area of Circle8.Return");
                     string s = Console.ReadLine();
                     switch (s)
                     {
@@ -209,8 +209,43 @@ namespace Calculations
                             Console.Clear();
                             break;
 
-                        //Return to menu
                         case ("5"):
+                            Console.WriteLine("What number do you want to find the square root of?");
+                            if(double.TryParse(Console.ReadLine(), out double userNum) == false)
+                            {
+                                Console.WriteLine("Invalid input");
+                                break;
+                            }
+                            if (userNum == 0)
+                            {
+                                Console.WriteLine("Invalid input");
+                                break;
+                            }
+                            else
+                            {
+                                double res = Calculator.SquareRT(userNum);
+                                Console.WriteLine($"The square root of {userNum} is {res}");
+                            }
+                            break;
+
+                        case ("6"):
+                            Console.WriteLine("What number do you want to multiply? (Only one number)");
+                            double num = double.Parse(Console.ReadLine());
+                            Console.WriteLine($"Now what number will {num} be multiplied to the power of? (Only one number)");
+                            int exponent = Int32.Parse(Console.ReadLine());
+                            double results = Calculator.Exponential(num, exponent);
+                            Console.WriteLine($"{num} to the power of {exponent} is {results}");
+                            break;
+
+                        case ("7"):
+                            Console.WriteLine("What is the radius of your circle?");
+                            double rad = double.Parse(Console.ReadLine());
+                            double area = Calculator.CircleArea(rad);
+                            Console.WriteLine($"The area of your circle is {area}");
+                            break;
+
+                        //Return to menu
+                        case ("8"):
                             Console.WriteLine("Returning to main menu");
                             System.Threading.Thread.Sleep(1000);
                             Console.Clear();
